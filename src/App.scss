@@ -1,20 +1,20 @@
+///COLORS
+$titleColorBlack: #252527;
+$titleColorDark:#505152;
+$titleColorGray:rgba(160, 160, 158, 0.933);
+$titleColorLightGray:rgb(243, 243, 243);
+$titleColorWhite:#fff;
+
+///SPACES
+$marginBetween:10px;
+
+
+*{
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: $titleColorGray;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,16 +23,401 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.Receipt{
+  width: 60%;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  &:hover .Hover{
+    border:1px dashed $titleColorGray;
+    visibility: visible;
+    background-color: $titleColorLightGray;
+    
+  }
+}
+.Padding{
+  padding: 10px;
+}
+.Logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex:1;
+  justify-content: flex-start;
+  margin-right: $marginBetween;
+  margin-bottom: $marginBetween;
+  .Image-template{
+    height: 40px;
+    width: 40px;
+    margin: 15px;
+    margin-left: 0px;
+  }
+  .Description{
+    color: $titleColorGray;
+    font-size: calc(10px + 1vmin) ;
+    cursor: pointer;
+  }
+  input{
+    width: 15px;
+    visibility: hidden;
+  }
+  img{
+    width: 150px;
+    aspect-ratio: 1;
+    border-radius: 10px;
+  }
+}
+.Invoice{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex:1;
+  margin-left: $marginBetween;
+  margin-bottom: $marginBetween;
+  .Description{
+    color: $titleColorDark;
+    font-size: 20px ;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+.Customer{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  .Image-template{
+    height: 40px;
+    width: 40px;
+    margin: 15px;
+    margin-left: 0px;
+  }
+  .From{
+    color: $titleColorGray;
+  }
+  .Content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .Description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .Name{
+      color: $titleColorDark;
+      font-size: calc(5px + 2vmin);
+      // margin-bottom: 5px;
+    }
+    .Detail{
+      color: $titleColorGray;
+      font-size: calc( 2vmin);
+    }
+    
+  }
+  .Info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .Header{
+      font-size: 13px;
+      font-weight: 900;
+      color: $titleColorBlack;
+      margin:15px 0px;
+    }
+    .Content{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-bottom: 20px;
+      color: $titleColorDark;
+      font-size: 13px;
+    }
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+.Customer:first-child{
+  margin-right: $marginBetween;
+  margin-top: $marginBetween;
+}
+.Customer:last-child{
+  margin-left: $marginBetween;
+  margin-top: $marginBetween;
+}
+.Details{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 13px;
+  flex: 1;
+  .Title{
+    color: $titleColorBlack;
+    font-weight: 700;
+  }
+  .Description{
+    color: $titleColorDark;
+    padding: 12px 5px;
+    margin:  5px;
+    border:1px solid #bbbbbb;
+  }
+}
+.InvoiceTable{
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  color: $titleColorDark;
+  font-size: 14px;
+  .Item-description{
+    color: $titleColorGray;
+  }
+  th {
+    padding: 12px 10px;
+    text-align: center;
+    background-color: #d7d8d8;
+    color: $titleColorDark;
+    border:2px solid #bbbbbb;
+    border-left: 0;
+    border-right: 0;
+  }
+  th:first-child {
+    text-align: left;
+  }
+  tr{
+    border:1px solid #bbbbbb;
+    border-left: 0;
+    border-right: 0;
+  }
+  tr:nth-child(even){
+    background-color: $titleColorWhite;
+  }
+  tr:nth-child(odd){
+    background-color:  #e9eaea
+  }
+  tr:hover {
+    background-color: rgb(4, 4, 4);
+    color:$titleColorWhite ;
+  }
+  td{
+    text-align: center;
+    padding: 10px 10px;
+  }
+  td:first-child {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  td:last-child {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $titleColorWhite;
 
-.App-link {
-  color: #61dafb;
+    .Edit-btn{
+      background-color: #0b34ae;
+      padding: 5px;
+      border-radius: 10px;
+      width: 60px;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    .Remove-btn{
+      background-color: #de2626;
+      padding: 5px;
+      border-radius: 10px;
+      width: 60px;
+      cursor: pointer;
+    }
+  }
+}
+.Add-new-row{
+  width: 100%;
+  background-color: #ededed;
+  border:1px dashed #bbbbbb;
+  padding: 15px 0px;
+  color: #505152;
+  font-size: 14px;
+  margin-top: 25px;
+  text-align: center;
+  &:hover {
+      background-color: #bbbbbb;
+      cursor: pointer;
+      color: $titleColorWhite;
+  }
+}
+.New-row-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+.Confirm-button{
+  color: #fff;
+  width: 13%;
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: 700;
+  background-color: #0b34ae;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+    background-color: #092a8d;
+  }
+}
+.New-table-row{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 85%;
+  .Item-properties{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    input{
+      padding: 12px 5px;
+      margin:  5px;
+      margin-bottom: 15px;
+      border:1px solid #bbbbbb;
+    }
+    .Error{
+      border:1px solid #e12828 ;
+    }
+    input:first-child {
+      margin-left: 0px;
+    }
+    input:last-child {
+      margin-right: 0px;
+    }
+    .Item-title{
+      width: 40%;
+    }
+    .Item-details{
+      width: 20%;
+    }
+  }
+  
+}
+}
+.Summary{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 40px;
+  .Header{
+    color: $titleColorDark;
+    background-color: #d7d8d8; 
+    border:2px solid #bbbbbb;
+    border-left: 0;
+    border-right: 0;
+    width: 30%;
+    font-weight: 600;
+    text-align: center;
+  }
+  .Row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $titleColorDark;
+    width: 30%;
+    border:0.5px solid #dbdbdb;
+    border-left: 0;
+    border-right: 0;
+    font-size: 14px;
+    padding: 20px 10px;
+  }
+}
+.Hover{
+  border:0px dashed $titleColorGray;
+}
+.Modal{
+  // background-color: #fff;
+  width: 700px;
+  margin: auto;
+  align-self: center;
+  margin-top: 50px;
+  // border:1px solid $titleColorGray;
+  .Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    .Header{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color: $titleColorDark;
+      font-weight: 500;
+      position: relative;
+      background-color: $titleColorLightGray;
+      padding: 20px 0px;
+      margin-bottom:30px;
+      .Close{
+        position: absolute;
+        right: 8px;
+        top:8px;
+        background-color: #de2626;
+        color: $titleColorWhite;
+        padding: 5px 10px;
+        border-radius: 5px;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+    .Row{
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 10px;
+      .Form-item{
+        display: flex; 
+        flex-direction: column; 
+        width: 49%;
+        label{
+          color: $titleColorGray;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        input{
+          padding: 10px 5px;
+          // margin:  5px;
+          margin-bottom: 25px;
+          border:1px solid #bbbbbb;
+        }
+      }
+    }
+    .Confirm-btn{
+      color: $titleColorWhite;
+      font-weight: 700;
+      background-color: #0b34ae;
+      border-radius: 5px;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      &:hover{
+        cursor: pointer;
+        background-color: #092a8d;
+      }
+    }
+  }
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
